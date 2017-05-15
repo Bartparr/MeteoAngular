@@ -1,0 +1,53 @@
+
+
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="meteo.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+      <!-- Partie head -->
+      <meta charset="UTF-8">
+      <meta description="je suis la page contact">
+      <title> Meteo </title>
+   </head>
+   <body ng-app="ModuleApplication">
+      <div id="body">
+        <h1>Meteo à Paris </h1>
+
+				<div>
+					<iframe seamless width="888" height="336" frameborder="0" src="http://www.infoclimat.fr/public-api/mixed/iframeSLIDE?_ll=48.85341,2.3488&_inc=WyJQYXJpcyIsIjQyIiwiMjk4ODUwNyIsIkZSIl0=&_auth=UkgFElMtXH4DLgE2UiRSewVtV2IBdwAnUy9XNABlAn9ROlIzDm5dOwRqVyoOIQs9VnsBYltgUmIKYVUtCHpeP1I4BWlTOFw7A2wBZFJ9UnkFK1c2ASEAJ1MxVzAAZAJ%2FUTNSPw5tXSEEalc1DjcLIVZkAWVbY1J1CnZVMwhhXjRSNQViUzFcNgNtAWNSZFJ5BSlXMgE3ADlTMVc3AD4CYFFjUjEObl08BDlXMQ48CyFWYgFnW2VSbQpuVTUIZ140Ui4FflNJXE0DcQEjUiBSMwVwVyoBawBmU2Q%3D&_c=90b4f6e209699008c2c45e34b25df2c9"></iframe>
+				</div>
+         <div ng-controller="FirstController">
+           <h1>Navigation </h1>
+            <ul>
+            <li><a href="#/temperature" class="active"> Temperature et niveau de la mer</a></li>
+            <li><a href="#/"> Pluie,vent, neige et nuages </a></li>
+            <li><a href="#/temperatureDirec"> Temperature et niveau de la mer via directive</a></li>
+            <li><a href="#/ventDirec"> Pluie,vent, neige et nuages via directive</a></li>
+            <li><a href="#/formulaire"> Formulaire: obtenez la météo d'une ville avec sa longitude et latitude</a></li>
+            </ul>
+            <div ng-view>
+            </div>
+         </div>
+      </div>
+      <script src="app/directives/tempDirective.js"></script>
+      <script src="app/directives/ventDirective.js"></script>
+      <script src="app/filtre/ToIconFilter.js"></script>
+      <script src="app/filtre/TempFilter.js"></script>
+      <script src="app/filtre/ToIconPicturesFilter.js"></script>
+      <script src="app/filtre/LevelFilter.js"></script>
+      <script src="app/filtre/ToIconLevelPicturesFilter.js"></script>
+      <script src="app/filtre/ToIconSnowFilter.js"></script>
+      <script src="app/service/DataService.js"></script>
+      <script src="app/controller/FirstController.js"></script>
+      <script src="app/controller/HomeController.js"></script>
+      <script src="app/controller/CityController.js"></script>      
+      <script src="app/module/ModuleApplication.js"></script>
+      <script>
+         /****************************
+         Il faut déclarer le module tout à la fin ! ! !
+         ******************************/
+      </script>
+   </body>
+</html>

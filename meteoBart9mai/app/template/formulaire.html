@@ -1,0 +1,42 @@
+
+
+<fieldset>
+   <div id="option">
+      <legend> Ville  1 </legend>
+      <br>
+      <label for="lattitude">Lattitude: </label> <input id= "lattitude" type="text" ng-model="lattitude" name="lattitude"/><br><br>
+      <label for="longitude">Longitude :  </label>
+      <input id= "longitude" type="text" ng-model="longitude" name="longitude"/><br><br>
+   </div>
+   <div id="option">
+      <legend> Ville 2 </legend>
+      <br>
+      <label for="lattitude2">Lattitude: </label> <input id= "lattitude2" type="text" ng-model="lattitude2" name="lattitude2"/><br><br>
+      <label for="longitude">Longitude :  </label>
+      <input id= "longitude2" type="text" ng-model="longitude2" name="longitude2"/><br><br>
+   </div>
+   <div id="option">
+      <legend> Ville 3 </legend>
+      <br>
+      <label for="lattitude3">Lattitude: </label> <input id= "lattitude3" type="text" ng-model="lattitude3" name="lattitude3"/><br><br>
+      <label for="longitude">Longitude :  </label>
+      <input id= "longitude3" type="text" ng-model="longitude3" name="longitude3"/><br><br>
+   </div>
+   <input  id= "ville" type="button" ng-click="search()" ng value="Chercher" /> <br><br>
+</fieldset>
+<div ng-if="haveResult" >
+   <table ng-init="getMeteoVille(URLville1)">
+      <tr>
+         <th> Heures  </th>
+         <th> temperature  </th>
+         <th>Nebulosité</th>
+      </tr>
+      <tr ng-repeat="(key,value) in meteoVille" ng-if="$index >4" >
+         <td> {{key}}  </td>
+         <td> {{value.temperature.sol}}  </td>
+         <td> {{value.nebulosite.totale}}</td>
+      </tr>
+   </table>
+   <br>
+   <br>
+</div>

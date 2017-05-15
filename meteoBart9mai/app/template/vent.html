@@ -1,0 +1,37 @@
+<div ng-if="!charge">  <img src="images\balls.gif" style="width:150px;height:150px;"></div>
+<div ng-if="charge">
+<table ng-init="getMeteo()">
+   <tr>
+      <th>Date</th>
+      <th>Pluie</th>
+      <th>Pluie convective</th>
+      <th>Vent rafales</th>
+      <th>Risque neige</th>
+      <th>Nebulosité</th>
+   </tr>
+   <tr ng-repeat="(key,value) in meteo" ng-if="$index >4" class="{{value.pression.niveau_de_la_mer|LevelFilter}}">
+      <td>
+         {{key}}
+      </td>
+      <td>
+         {{value.pluie}}
+      </td>
+      <td>
+         {{value.pluie_convective}}
+      </td>
+      <td>
+         {{value.vent_rafales}}
+      </td>
+      <td>
+      <img ng-src='{{value.risque_neige|ToIconSnowFilter}} ' style="width:150px;height:150px;">
+      </td>
+      <td>
+        Haute: {{value.nebulosite.haute}} <br />
+        Moyenne: {{value.nebulosite.moyenne}} <br />
+        Basse: {{value.nebulosite.basse}} <br />
+        Totale: {{value.nebulosite.totale}}
+      </td>
+
+   </tr>
+</table>
+<div>

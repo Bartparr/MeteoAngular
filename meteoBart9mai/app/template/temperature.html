@@ -1,0 +1,38 @@
+
+<div>
+  <p>La ligne du tableau est en rouge si le niveau de la mer dépassse 101910, et en bleu si son niveau est en dessous </p>
+  <p>La case évolution du niveau de la mer indique si ce niveau augmente ou diminue (on le fait sur le niveau de la mer plutôt que sur les températures) </p>
+  <p>Cliquer sur toggle kelvin/degré celsius pour changer les unités </p>
+
+
+</div>
+<div ng-if="!charge">  <img src="images\balls.gif" style="width:150px;height:150px;"></div>
+<div ng-if="charge">
+   <table ng-init="getMeteo()">
+   <tr>
+      <th>Date et Heure </th>
+      <th>Temperature <br/><a ng-click="toggle()">Toggle Kelvin/Degré</a></th>
+      <th>Niveau de la mer</th>
+      <th>Evolution du niveau de la mer</th>
+   </tr>
+   <tr ng-repeat="(key,value) in meteo" ng-if="$index >4" class="{{value.pression.niveau_de_la_mer|LevelFilter}}">
+      <td>
+         {{key}}
+      </td>
+      <td>
+         <div ng-if="unit">{{convert(value.temperature.sol)}}</div>
+         <div ng-if="!unit">{{value.temperature.sol}} Kelvin </div>
+
+      </td>
+      <td>
+         {{value.pression.niveau_de_la_mer}}
+      </td>
+      <td ng-init="a=getLevel()">
+        <img ng-if="a < value.pression.niveau_de_la_mer" src="images\increase.jpg" style="width:100px;height:100px;">
+        <img ng-if="a > value.pression.niveau_de_la_mer" src="images\decrease.jpg" style="width:100px;height:100px;">
+        <img ng-if="a == value.pression.niveau_de_la_mer" src="images\equal.png" style="width:100px;height:100px;">
+        <span ng-init=setLevel(value.pression.niveau_de_la_mer)></span>
+      </td>
+   </tr>
+   <table>
+</div>

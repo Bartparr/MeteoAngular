@@ -1,0 +1,168 @@
+.isDebit {
+    background-color: pink;
+    font-weight: bold;
+}
+.isCredit {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+.isHot {
+    background-color: rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+}
+.isCold {
+    background-color: #00FFFF;
+    font-weight: bold;
+}
+table {
+    font-family: "Lato", "sans-serif";
+}
+/* added custom font-family  */
+
+td {
+    /* removed the border from the table data rows  */
+
+    text-align: center;
+    width: 10em;
+    padding: 1em;
+}
+th {
+    /* removed the border from the table heading row  */
+
+    text-align: center;
+    padding: 1em;
+    background-color: lightblue;
+    /* added a red background color to the heading cells  */
+
+    color: white;
+}
+/* added a white font color to the heading text */
+
+body {
+    font-family: "trebuchet ms", sans-serif;
+}
+form {
+    background-color: #FAFAFA;
+    padding: 10px;
+    width: 280px;
+}
+fieldset {
+    padding: 0 20px 20px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #DF3F3F;
+}
+legend {
+    color: #DF3F3F;
+    font-weight: bold
+}
+label {
+    margin-top: 10px;
+    display: inline-block;
+}
+input,
+select,
+option {
+    background-color: #FFF3F3;
+}
+input,
+select {
+    padding: 3px;
+    border: 1px solid #F5C5C5;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 1px 1px 2px #C0C0C0 inset;
+}
+select {
+    margin-top: 10px;
+}
+input[type=submit],
+input[type=reset] {
+    width: 250px;
+    margin-left: 5px;
+    box-shadow: 1px 1px 1px #D83F3D;
+    cursor: pointer;
+}
+input[type=submit]:focus,
+input[type=reset]:focus {
+    background-color: #FFF3F3;
+}
+input[type=submit]:hover {
+    background-color: hotpink;
+}
+input[type=submit]:active,
+input[type=reset]:active {
+    background-color: #FCDEDE;
+    box-shadow: 1px 1px 1px #D83F3D inset;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+input[type=number] {
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=number]:focus {
+    width: 100%;
+}
