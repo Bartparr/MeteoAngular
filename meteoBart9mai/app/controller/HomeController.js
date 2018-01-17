@@ -1,3 +1,6 @@
+//Test commit
+
+
 function HomeController($scope,DataService){
   $scope.hello="hello";
   $scope.charge=false;
